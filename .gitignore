@@ -1,52 +1,39 @@
-# Prerequisites
-*.d
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+//SelenK
+#include <stdio.h>
+int twoMinimum(int, int);
+int threeMinimum(int, int, int);
 
-# Linker output
-*.ilk
-*.map
-*.exp
+int main() {
+int x,y,z;
+int two,three;
 
-# Precompiled Headers
-*.gch
-*.pch
+printf("Enter 3 numbers: ");
+scanf("%d %d %d", &x,&y,&z);
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+two = twoMinimum(x, y);
+two = twoMinimum(two, z);
+three = threeMinimum(x, y, z);
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+printf("Minimum number is(twoMinimum): %d", two);
+printf("\nMinimum number is(threeMinimum): %d", three);
+return 0;
+}
+int twoMinimum(int x, int y) {
+	if(x<y)
+		return x;
+	else
+		return y;
+}
+int threeMinimum(int x, int y, int z){
+	if(x<y && x<z)
+		return x;
+	else if (y<x && y<z)
+		return y;
+	else
+		return z;
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+}
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+
